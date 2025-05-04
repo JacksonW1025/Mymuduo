@@ -11,7 +11,7 @@ Logger& Logger::instance(){
 }
 
 // 设置日志级别
-void Logger::setLogLevel(int level){
+void Logger::setLogLevel(LogLevel level){
     logLevel_ = level; // 设置日志级别
     // 这里可以添加一些其他的初始化代码，比如打开文件，设置格式等
 }
@@ -20,16 +20,16 @@ void Logger::setLogLevel(int level){
 void Logger::log(std::string msg){
     switch (logLevel_) // 根据日志级别输出不同的日志
     {
-        case INFO:
+        case LogLevel::INFO:
             std::cout << "[INFO]";
             break;
-        case ERROR:
+        case LogLevel::ERROR:
             std::cout << "[ERROR]";
             break;
-        case FATAL:
+        case LogLevel::FATAL:
             std::cout << "[FATAL]";
             break;
-        case DEBUG:
+        case LogLevel::DEBUG:
             std::cout << "[DEBUG]";
             break;
         default:

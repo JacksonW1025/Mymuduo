@@ -55,6 +55,7 @@
 #endif
 
 // 定义日志的级别 INFO ERROR FATAL DEBUG
+// 在 C++11 及以后，使用 enum class 而不是传统的 enum 是推荐的做法，虽然需要多写一些代码（加上 LogLevel::），但提供了更好的类型安全性和命名空间管理。
 enum class LogLevel
 {
     INFO,       // INFO级别日志，普通信息
@@ -70,10 +71,10 @@ public:
     // 这个函数是一个静态成员函数，返回Logger类的唯一实例
     static Logger& instance();
     // 设置日志级别
-    void setLogLevel(int level);
+    void setLogLevel(LogLevel level);
     // 写日志
     void log(std::string msg);
 private:
-    int logLevel_; // 日志级别，_表示私有成员变量，加在后面是为了避免与成员函数名冲突，区分成员变量和成员函数，避免和系统变量冲突
+    LogLevel logLevel_; // 日志级别，_表示私有成员变量，加在后面是为了避免与成员函数名冲突，区分成员变量和成员函数，避免和系统变量冲突
     Logger(){}
 };
