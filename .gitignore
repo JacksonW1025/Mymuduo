@@ -1,0 +1,43 @@
+# Ignore lib and build directories
+/lib/
+/build/
+
+# C++ build artifacts
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+# CMake build directories
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/Makefile
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependency files
+*.d
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Logs
+*.log
+
+# Generated files
+/bin/
+/obj/

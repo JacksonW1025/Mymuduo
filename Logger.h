@@ -42,7 +42,7 @@
 // 如果定义了MUDEBUG宏，则编译器会编译下面的代码,这是因为需要避免在release版本中输出调试信息，造成性能下降
 #ifdef MUDEBUG 
 
-#define LOG_DEBUG(LogmsgFormat,...) \  
+#define LOG_DEBUG(LogmsgFormat,...) \
     do { \
         Logger &logger = Logger::instance(); \
         logger.setLogLevel(LogLevel::DEBUG); \

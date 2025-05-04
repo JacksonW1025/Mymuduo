@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 
+// 这个头文件定义了一个时间戳类，用于表示时间戳
 class Timestamp
 {
 public:
