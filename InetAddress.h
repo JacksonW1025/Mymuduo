@@ -3,7 +3,7 @@
 #include <netinet/in.h>
 #include <string>
 
-// 封装socket地址的类
+// 封装socket地址的类,Muduo库中它继承自copyable类，允许拷贝，这里进行了简化
 class InetAddress
 {
 public:
