@@ -30,8 +30,8 @@ std::string Timestamp::toString() const
     return std::string(buf); 
 }
 
-int main(){
-    //在Ubuntu系统上编译时，使用g++ -std=c++11 -o Timestamp Timestamp.cc
-    std::cout << Timestamp::now().toString() << std::endl; // 输出当前时间
-    return 0;
-}
+// int main(){
+//     //在Ubuntu系统上编译时，使用g++ -std=c++11 -o Timestamp Timestamp.cc
+//     std::cout << Timestamp::now().toString() << std::endl; // 输出当前时间
+//     return 0;
+// }
