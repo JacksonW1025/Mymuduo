@@ -1,4 +1,5 @@
 #include "Poller.h"
+#include <stdlib.h>
 // 这是一个公共的源文件，避免Poller.cc去依赖子类，这是一个设计的细节
 Poller* Poller::newDefaultPoller(EventLoop *loop)
 {
