@@ -1,6 +1,7 @@
 #include "EPollPoller.h"
 #include "Logger.h"
 #include <errno.h>
+#include <unistd.h>
 
 const int kNew = -1; // 表示channel未添加到epoll中
 const int kAdded = 1; // 表示channel已添加到epoll中
@@ -20,7 +21,7 @@ EPollPoller::EPollPoller(EventLoop *loop)
 
 EPollPoller::~EPollPoller()
 {
-    // 关闭epoll实例
+    // 关闭epoll实例,close函数在unistd.h头文件中
     ::close(epollfd_);
 }
 

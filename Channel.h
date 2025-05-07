@@ -38,7 +38,7 @@ public:
 
     int fd() const { return fd_; } //获取文件描述符
     int events() const { return events_; } //获取注册的事件
-    int set_revents(int revt) { revents_ = revt; } //设置poller返回的事件
+    void set_revents(int revt) { revents_ = revt; } //设置poller返回的事件
 
     //设置fd相应的事件状态
     void enableReading() { events_ |= kReadEvent; update(); } //启用读事件，｜=表示按位或操作

@@ -34,4 +34,4 @@ protected:
     ChannelMap channels_;
 private:
     EventLoop* ownerLoop_; //定义Poller所属的事件循环
-}
+};
