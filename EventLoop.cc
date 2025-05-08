@@ -96,7 +96,7 @@ void EventLoop::loop()
 /*
                 mainloop
 
-        ========================= 生产者-消费者的线程安全队列
+        ========================= 生产者-消费者的线程安全队列(muduo没有使用)
     
     subloop1  subloop2  subloop3  subloop4
 */
@@ -146,7 +146,7 @@ void EventLoop::handleRead()
     ssize_t n = read(wakeupFd_, &one, sizeof one);
     if(n != sizeof one)
     {
-        LOG_ERROR("EventLoop::handleRead() reads %d bytes instead of 8 \n", n);
+        LOG_ERROR("EventLoop::handleRead() reads %ld bytes instead of 8 \n", n);
     }
 }
 
@@ -157,7 +157,7 @@ void EventLoop::wakeup()
     ssize_t n = write(wakeupFd_, &one, sizeof one);
     if(n != sizeof one)
     {
-        LOG_ERROR("EventLoop::wakeup() writes %d bytes instead of 8 \n", n);
+        LOG_ERROR("EventLoop::wakeup() writes %ld bytes instead of 8 \n", n);
     }
 }
 
