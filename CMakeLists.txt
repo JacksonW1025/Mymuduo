@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.5) #设置CMake最低版本要求
+cmake_minimum_required(VERSION 3.10) #设置CMake最低版本要求
 project(mymuduo) #设置项目名称
 set(CMAKE_CXX_STANDARD 11) #设置C++标准为C++11
 

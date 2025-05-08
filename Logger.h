@@ -37,6 +37,7 @@
         char buf[1024] = {0}; \
         snprintf(buf, sizeof(buf), LogmsgFormat, ##__VA_ARGS__); \
         logger.log(buf); \
+        exit(-1); \
     } while (0)
     
 // 如果定义了MUDEBUG宏，则编译器会编译下面的代码,这是因为需要避免在release版本中输出调试信息，造成性能下降
