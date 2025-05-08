@@ -39,14 +39,14 @@ uint16_t InetAddress::toPort() const
     return ntohs(addr_.sin_port); // 将网络字节序的端口号转换为主机字节序并返回
 }
 
-int main()
-{
-    //在Ubuntu系统上编译时，使用g++ -std=c++11 -o InetAddress InetAddress.cc
-    // 测试InetAddress类
-    InetAddress addr(8080);
+// int main()
+// {
+//     //在Ubuntu系统上编译时，使用g++ -std=c++11 -o InetAddress InetAddress.cc
+//     // 测试InetAddress类
+//     InetAddress addr(8080);
     
-    std::cout << addr.toIp() << std::endl; // 输出IP地址
-    std::cout << addr.toIpPort() << std::endl; // 输出IP地址和端口号
-    std::cout << addr.toPort() << std::endl; // 输出端口号
-    return 0;
-}
+//     std::cout << addr.toIp() << std::endl; // 输出IP地址
+//     std::cout << addr.toIpPort() << std::endl; // 输出IP地址和端口号
+//     std::cout << addr.toPort() << std::endl; // 输出端口号
+//     return 0;
+// }
