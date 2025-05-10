@@ -19,6 +19,11 @@ public:
     {
         return &addr_; // 返回sockaddr结构体的地址
     }
+    void setSockAddr(const sockaddr_in& addr)
+    {
+        addr_ = addr;
+    }
+    
 private:
     sockaddr_in addr_; // socket地址结构体,其中sockaddr_in是一个结构体，包含了IP地址和端口号等信息，来自<netinet/in.h>头文件
 
