@@ -4,7 +4,7 @@
 #include <semaphore.h>
 std::atomic_int Thread::numCreated_(0); // 初始化静态成员变量
 
-Thread::Thread(ThreadFunc func, const std::string &name = std::string())
+Thread::Thread(ThreadFunc func, const std::string &name) //默认参数不需要在声明和定义中重复定义
     : started_(false),
       joined_(false),
       tid_(0),
