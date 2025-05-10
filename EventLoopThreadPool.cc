@@ -11,8 +11,6 @@ EventLoopThreadPool::EventLoopThreadPool(EventLoop *baseLoop, const std::string 
 {
 }
 
-EventLoopThreadPool::~EventLoopThreadPool() = default;
-
 void EventLoopThreadPool::start(const ThreadInitCallback &cb)
 {
     started_ = true;
@@ -39,7 +37,13 @@ EventLoop *EventLoopThreadPool::getNextLoop()
     if (!loops_.empty())
     {
         loop = loops_[next_];
+        ++next_;
+        if (next_ >= loops_.size())
+        {
+            next_ = 0;
+        }
     }
+    return loop;
 }
 
 std::vector<EventLoop *> EventLoopThreadPool::getAllLoops()

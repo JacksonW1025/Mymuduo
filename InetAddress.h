@@ -7,7 +7,7 @@
 class InetAddress
 {
 public:
-    explicit InetAddress(uint16_t port,std::string ip = "127.0.0.1"); // 构造函数，默认IP地址
+    explicit InetAddress(uint16_t port = 0, std::string ip = "127.0.0.1"); // 构造函数，默认IP地址
     explicit InetAddress(const struct sockaddr_in& addr) // 构造函数，传入sockaddr_in结构体
         : addr_(addr) {} // 初始化成员变量addr_
 

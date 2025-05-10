@@ -2,7 +2,7 @@
 
 #include "EventLoop.h"
 #include "EventLoopThread.h"
-#include <noncopyable.h>
+#include "noncopyable.h"
 #include <functional>
 #include <memory>
 #include <string>
@@ -26,7 +26,7 @@ public:
 
     bool started() const { return started_; }
     const std::string &name() const { return name_; }
-    
+
 private:
     EventLoop *baseLoop_; // 主线程的EventLoop，一般的epolldemo用这种，负责处理新连接和读写事件；在这里只负责处理新连接
     std::string name_; // 线程池的名字
