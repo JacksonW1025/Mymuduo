@@ -12,7 +12,7 @@ class Thread : noncopyable
 {
 public:
     using ThreadFunc = std::function<void()>;
-    explicit Thread(ThreadFunc, const std::string& name = std::string());
+    explicit Thread(ThreadFunc, const std::string& name = std::string()); // ThreadFunc是一个函数类型，表示线程函数
     ~Thread();
 
     void start();
@@ -31,7 +31,7 @@ private:
     bool joined_;
     std::shared_ptr<std::thread> thread_; // 不能直接使用std::thread，因为std::thread会直接启动
     pid_t tid_;
-    ThreadFunc func_;
+    ThreadFunc func_; // 线程函数
     std::string name_;
     static std::atomic_int numCreated_;
 
