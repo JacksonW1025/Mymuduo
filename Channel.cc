@@ -30,7 +30,7 @@ Channel::~Channel()
     // }
 }
 
-// channel的tie方法什么时候调用过？
+// channel的tie方法什么时候调用过？ 一个新的Tcp连接创建的时候，TcpConnection => Channel => TcpConnection::connectEstablished
 void Channel::tie(const std::shared_ptr<void> &obj)
 {
     tie_ = obj; //将obj赋值给tie_

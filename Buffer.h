@@ -87,6 +87,9 @@ public:
     // 从fd上读取数据
     ssize_t readFd(int fd, int *saveErrno);
 
+    // 从fd上发送数据
+    ssize_t writeFd(int fd, int *saveErrno);
+
 private:
     char *begin() { return &*buffer_.begin(); } // 获取缓冲区底层数组首元素地址
     const char *begin() const { return &*buffer_.begin(); } // const版本，用于const对象

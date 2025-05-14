@@ -1,6 +1,7 @@
 #include "Buffer.h"
 #include <errno.h>
 #include <sys/uio.h>
+#include <unistd.h>
 
 /*
 readFd函数： 
@@ -42,4 +43,13 @@ ssize_t Buffer::readFd(int fd, int *saveErrno)
     }
     return n;
 }
-    
+
+ssize_t Buffer::writeFd(int fd, int *saveErrno)
+{
+    ssize_t n = ::write(fd, peek(), readableBytes());
+    if (n < 0)
+    {
+        *saveErrno = errno;
+    }
+    return n;
+}
