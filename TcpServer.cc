@@ -25,6 +25,7 @@ TcpServer::TcpServer(EventLoop *loop, const InetAddress &listenAddr, const std::
     , connectionCallback_()
     , messageCallback_()
     , nextConnId_(1)
+    , started_(0)
 {
     //当有新用户新连接时，会调用TcpServer::newConnection回调
     acceptor_->setNewConnectionCallback(std::bind(&TcpServer::newConnection, this, std::placeholders::_1, std::placeholders::_2));

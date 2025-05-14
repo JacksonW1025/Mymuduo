@@ -10,7 +10,8 @@
 #include "InetAddress.h"
 #include "Acceptor.h"
 #include "Callbacks.h"
-
+#include "TcpConnection.h"
+#include "Buffer.h"
 #include <functional>
 #include <atomic>
 #include <unordered_map>
