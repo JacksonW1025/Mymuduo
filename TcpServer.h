@@ -29,6 +29,7 @@ public:
 
     TcpServer(EventLoop *loop,
              const InetAddress &listenAddr,
+             const std::string &nameArg,
              Option option = kReusePort);
 
     ~TcpServer();
