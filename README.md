@@ -1,5 +1,7 @@
 # Mymuduo
 手写简化muduo网络库项目，作个人源码阅读学习用途，代码注释完全。
+所有的boost库相关的多线程操作，都改为C++11标准
+只实现Epoll Poller
 
 ## Design Patterns
 muduo库主要采用了以下几种设计模式：
