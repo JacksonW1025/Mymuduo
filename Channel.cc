@@ -4,7 +4,7 @@
 #include "Logger.h" 
 
 const int Channel::kNoneEvent = 0; //无事件
-const int Channel::kReadEvent = EPOLLIN | EPOLLOUT; //读事件
+const int Channel::kReadEvent = EPOLLIN | EPOLLPRI; //读事件
 const int Channel::kWriteEvent = EPOLLOUT; //写事件
 
 //本手写的muduo库只支持epoll，不同于原版支持poll和epoll
@@ -42,15 +42,13 @@ void Channel::tie(const std::shared_ptr<void> &obj)
 void Channel::update()
 {
     // 通过channel所属的EventLoop，调用poller的相应方法，注册fd的events事件
-    // add code...
-    // loop_->updateChannel(this); //将当前channel添加到poller中
+    loop_->updateChannel(this); //将当前channel添加到poller中
 }
 
 // 在channel所属的eventloop中，删除当前的channel，eventloop里有一个channel列表
 void Channel::remove()
 {
-    // add code...
-    // loop_->removeChannel(this); //从poller中删除当前channel
+    loop_->removeChannel(this); //从poller中删除当前channel
 }
 
 void Channel::handleEvent(Timestamp receiveTime)
